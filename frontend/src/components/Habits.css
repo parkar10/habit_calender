@@ -1,0 +1,316 @@
+/* Dark theme habits page */
+.habits-container {
+  width: 100%;
+  height: calc(100vh - 100px);
+  padding: 1.5rem;
+  background: #121212;
+  color: #ffffff;
+  overflow-y: auto;
+}
+
+.habits-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.habits-header h2 {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.habits-header p {
+  color: #b3b3b3;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.loading {
+  text-align: center;
+  color: #b3b3b3;
+  font-size: 1.1rem;
+  margin: 3rem 0;
+}
+
+/* Controls section */
+.habits-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-container {
+  flex: 1;
+  max-width: 400px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #1e1e1e;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #63b3ed;
+}
+
+.search-input::placeholder {
+  color: #666666;
+}
+
+.sort-container {
+  min-width: 150px;
+}
+
+.sort-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #1e1e1e;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: #63b3ed;
+}
+
+/* Stats section */
+.habits-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stat-card {
+  background: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #333333;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.stat-card:nth-child(1) {
+  background: linear-gradient(135deg, #1a365d 0%, #2a4a6b 100%);
+  border-color: #63b3ed;
+}
+
+.stat-card:nth-child(2) {
+  background: linear-gradient(135deg, #1a2f1a 0%, #2a4a2a 100%);
+  border-color: #68d391;
+}
+
+.stat-card:nth-child(3) {
+  background: linear-gradient(135deg, #2d1b0f 0%, #4d3b2f 100%);
+  border-color: #f6ad55;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #b3b3b3;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Habits grid */
+.habits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.habit-card {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid #333333;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.habit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.habit-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.habit-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+  margin-right: 1rem;
+  line-height: 1.3;
+}
+
+.habit-count {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.habit-description {
+  color: #b3b3b3;
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+}
+
+.habit-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #888888;
+  border-top: 1px solid #333333;
+  padding-top: 0.75rem;
+}
+
+.last-used {
+  font-style: italic;
+}
+
+/* No habits state */
+.no-habits {
+  text-align: center;
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  border: 1px solid #333333;
+  color: #b3b3b3;
+  margin-top: 2rem;
+}
+
+.no-habits h3 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.no-habits p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .habits-container {
+    padding: 1rem;
+  }
+
+  .habits-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-container {
+    max-width: none;
+  }
+
+  .habits-stats {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 1.5rem;
+  }
+
+  .habits-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .habit-card {
+    padding: 1rem;
+  }
+
+  .habit-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .habit-name {
+    margin-right: 0;
+  }
+
+  .habit-count {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .habits-container {
+    padding: 0.5rem;
+  }
+
+  .habits-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .habits-stats {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animation for new cards */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.habit-card {
+  animation: slideIn 0.3s ease forwards;
+}

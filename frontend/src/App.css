@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #121212;
+  min-height: 100vh;
+  color: #ffffff;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+.app-nav {
+  background: #1e1e1e;
+  border-bottom: 1px solid #333333;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand h1 {
+  background: linear-gradient(135deg, #63b3ed 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.user-info {
+  color: #b3b3b3;
+  font-size: 0.9rem;
+}
+
+.nav-tabs {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-tab {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #b3b3b3;
+}
+
+.nav-tab:hover {
+  background: #2a2a2a;
+  color: #ffffff;
+}
+
+.nav-tab.active {
+  background: linear-gradient(135deg, #63b3ed 0%, #a78bfa 100%);
+  color: white;
+}
+
+.logout-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #c82333;
+}
+
+.app-main {
+  padding: 0;
+  min-height: calc(100vh - 100px);
+  background: #121212;
+}
+
+@media (max-width: 768px) {
+  .app-nav {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-brand {
+    text-align: center;
+  }
+  
+  .nav-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-tab, .logout-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .app-main {
+    padding: 1rem 0;
+  }
+}
